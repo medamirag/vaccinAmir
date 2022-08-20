@@ -5,7 +5,7 @@ import { JourFerieeComponent } from './jour-feriee/jour-feriee.component';
 import { VaccinComponent } from './vaccin/vaccin.component';
 
 const routes: Routes = [
-  {path:'vaccin',component:VaccinComponent},
+  {path:'vaccins',component:VaccinComponent},
   {path:'jf',component:JourFerieeComponent},
   {path:'etablissement',component:EtablissementComponent},
 ];

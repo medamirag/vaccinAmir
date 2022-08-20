@@ -4,8 +4,8 @@ import { ParentComponent } from './parent/parent.component';
 import { PatientComponent } from './patient/patient.component';
 
 const routes: Routes = [
-  {path:'patient',component:PatientComponent},
-  {path:'parent',component:ParentComponent},
+  {path:'patients',component:PatientComponent},
+  {path:'parents',component:ParentComponent},
 
 ];
 
