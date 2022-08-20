@@ -1,2 +1,6 @@
-export interface Jourferiee {
+export interface JourFeriee {
+    jourFeriee:string,
+    dateJF:Date,
+    
+
 }
