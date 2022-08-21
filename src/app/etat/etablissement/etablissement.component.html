@@ -5,19 +5,19 @@
 <div class="input-group mb-3">
 
 <div class="input-group mb-1">
-    <span class="input-group-text" id="basic-addon1">Etablissement</span>
+    <span class="input-group-text" id="basic-addon1">Password</span>
     <input [(ngModel)]="etablissement.access" type="password" class="form-control" placeholder="password" aria-label="password " aria-describedby="basic-addon1">
 </div>
 <div class="input-group mb-1">
-    <span class="input-group-text" id="basic-addon1">Etablissement</span>
+    <span class="input-group-text" id="basic-addon1">Email</span>
     <input [(ngModel)]="etablissement.email" type="email" class="form-control" placeholder="email" aria-label="email " aria-describedby="basic-addon1">
 </div>
 <div class="input-group mb-1">
-    <span class="input-group-text" id="basic-addon1">Etablissement</span>
+    <span class="input-group-text" id="basic-addon1">Telephone</span>
     <input [(ngModel)]="etablissement.phone" type="email" class="form-control" placeholder="telephone" aria-label="telephone " aria-describedby="basic-addon1">
 </div>
 <div class="input-group mb-1">
-    <span class="input-group-text" id="basic-addon1">Etablissement</span>
+    <span class="input-group-text" id="basic-addon1">Journée de Vaccination</span>
 <select  [(ngModel)]="etablissement.jourVaccin">
     <option *ngFor="let opt of options | keyvalue" [value]="opt.key" [selected]="opt.value">{{opt.value}}</option>
 </select>
