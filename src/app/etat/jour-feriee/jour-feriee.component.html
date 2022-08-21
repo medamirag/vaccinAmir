@@ -1,1 +1,13 @@
-<p>jour-feriee works!</p>
+<div class="input-group mb-1">
+    <span class="input-group-text" id="basic-addon1">JF</span>
+    <input [(ngModel)]="jourFeriee.jourFeriee" type="text" class="form-control" placeholder="Jour Feriee" aria-label="Jour Feriee " aria-describedby="basic-addon1">
+</div>
+<div class="input-group mb-3">
+
+    <span class="input-group-text">Date</span>
+  <input [(ngModel)]="jourFeriee.dateJF" type="date" aria-label="Age" class="form-control">
+</div>
+<div class="input-group mb-3 d-flex justify-content-center">
+    <button class="btn btn-primary" (click)="add()" routerLink="../">Valider</button>
+    <button class="btn btn-danger" routerLink="../">Annuler</button>
+      </div>

@@ -19,8 +19,6 @@ export class PatientListComponent implements OnInit {
   
   patients:Patient[]=[]
 
-
-
   deleteByName(name:string){
     this.patientService.deleteByName(name)
     this.patients=  this.patientService.getAllPatients()

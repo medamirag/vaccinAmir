@@ -1,4 +1,5 @@
 export interface Vaccin {
     vaccin:string,
-    age:number
+    age:number,
+    etat:Boolean
 }

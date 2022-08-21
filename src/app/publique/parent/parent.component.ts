@@ -17,10 +17,8 @@ parent:Parent={email:"",parent:"",phone:0}
   }
 
   ngOnInit(): void {
-    
   }
   add(){
-
     this.parentService.add(this.parent)
   }
 

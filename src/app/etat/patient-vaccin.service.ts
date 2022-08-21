@@ -22,6 +22,7 @@ genererVaccinPatient(patient:Patient){
 this.vaccins.forEach(vaccin => {
   // let dateActuelle:Date=patient.dateNaissance.setDate(patient.dateNaissance.getDay()+vaccin.age*30)
   var dtPV = moment(patient.dateNaissance, "DD-MM-YYYY").add(vaccin.age, 'month');
+console.log(typeof(dtPV.toDate()));
 
   this.patientVaccin.push({
     datePrevu:dtPV.toDate(),dateVaccin:new Date,effectuePar:"",etat:false,heureVaccin:{hours:0,minutes:0},patient:patient,vaccin:vaccin

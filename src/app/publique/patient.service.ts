@@ -27,12 +27,10 @@ export class PatientService {
       return this.Patients
     }
   constructor() { }
-
   deleteByName(name:string){
     console.log(name);
     this.Patients=this.Patients.filter(obj=>obj.patient!=name)
   }
-
   addOrUpdate(patient:Patient,id:number){
     if(id==-1){
     let newP:Patient={dateNaissance:patient.dateNaissance,parent:patient.parent,patient:patient.patient}

@@ -1,1 +1,20 @@
-<p>vaccin-list works!</p>
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Vaccin</th>
+      <th scope="col">age</th>
+      <th scope="col">Actif</th>
+      <th scope="col"><button class="btn btn-primary" routerLink="-1" >Ajouter</button></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let vaccin of vaccins; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ vaccin.vaccin  }}</td>
+      <td>{{ vaccin.age | number }}</td>
+      <td><input type="checkbox" [(ngModel)]="vaccin.etat"></td>
+      <td><button class="btn btn-warning" routerLink="{{i}}" >Modifier</button><button (click)="deleteByName(vaccin.vaccin)" class="btn btn-danger">Supprimer</button></td>
+    </tr>
+    </tbody>
+  </table>

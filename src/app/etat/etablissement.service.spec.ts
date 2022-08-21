@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { JourFerieeService } from './jour-feriee.service';
+import { EtablissementService } from './etablissement.service';
 
-describe('JourFerieeService', () => {
-  let service: JourFerieeService;
+describe('EtablissementService', () => {
+  let service: EtablissementService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(JourFerieeService);
+    service = TestBed.inject(EtablissementService);
   });
 
   it('should be created', () => {

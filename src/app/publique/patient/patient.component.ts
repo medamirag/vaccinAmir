@@ -9,6 +9,7 @@ import { Parent } from '../parent';
 import { ParentService } from '../parent.service';
 import { Patient } from '../patient';
 import { PatientService } from '../patient.service';
+import {cloneDeep} from 'lodash';
 
 @Component({
   selector: 'app-patient',
@@ -53,10 +54,9 @@ let actualDate=new Date()
 //generer Liste Vaccin avec Date Prévu
 this.patientVaccin = this.patientVaccinService.genererVaccinPatient(this.patient)
 //Generer Liste des Vaccin à faire la prochaine journée de vaccination
-
-console.log("this.patientVaccin"+this.patientVaccin);
-
-this.patientVaccin.filter(pv=>{pv.etat==false&&(pv.datePrevu.setDate( pv.datePrevu.getDate() + 5)<actualDate.setDate(actualDate.getDate()+6))}).forEach(element => {
+const TpatientVaccin = cloneDeep(this.patientVaccin);  
+actualDate.setDate(actualDate.getDate()+6)
+TpatientVaccin.filter(pv=>pv.etat==false&&(pv.datePrevu.setDate( pv.datePrevu.getDate() + 5)<actualDate.getDate())).forEach(element => {
 console.log("element"+element);
 
   if(this.mailingList.get(this.patient)==undefined){

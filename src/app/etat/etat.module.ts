@@ -6,7 +6,8 @@ import { JourFerieeComponent } from './jour-feriee/jour-feriee.component';
 import { VaccinComponent } from './vaccin/vaccin.component';
 import { EtablissementComponent } from './etablissement/etablissement.component';
 import { VaccinListComponent } from './vaccin/vaccin-list/vaccin-list.component';
-import { JourFerieeListComponent } from './vaccin/jour-feriee-list/jour-feriee-list.component';
+import { JourFerieeListComponent } from './jour-feriee/jour-feriee-list/jour-feriee-list.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { JourFerieeListComponent } from './vaccin/jour-feriee-list/jour-feriee-l
   ],
   imports: [
     CommonModule,
-    EtatRoutingModule
+    EtatRoutingModule,
+    FormsModule
   ]
 })
 export class EtatModule { }

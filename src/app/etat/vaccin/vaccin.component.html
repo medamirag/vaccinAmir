@@ -1,1 +1,19 @@
-<p>vaccin works!</p>
+<div class="input-group mb-1">
+    <span class="input-group-text" id="basic-addon1">@</span>
+    <input [(ngModel)]="vaccin.vaccin" type="text" class="form-control" placeholder="vaccin" aria-label="vaccin " aria-describedby="basic-addon1">
+</div>
+<div class="input-group mb-3">
+
+    <span class="input-group-text">Age(Mois)</span>
+  <input [(ngModel)]="vaccin.age" type="text" aria-label="Age" class="form-control">
+</div>
+<div class="input-group mb-3">
+
+  <span class="input-group-text " >Actif?</span>
+  <input [(ngModel)]="vaccin.etat" type="checkbox" aria-label="Actif" class="form-control">
+
+  </div>
+  <div class="input-group mb-3 d-flex justify-content-center">
+<button class="btn btn-primary" (click)="add()" routerLink="../">Valider</button>
+<button class="btn btn-danger" routerLink="../">Annuler</button>
+  </div>

@@ -6,11 +6,11 @@ import { Vaccin } from './vaccin';
 })
 export class VaccinService {
 vaccins:Vaccin[]=[
-  {age:12,vaccin:"A"},
-  {age:24,vaccin:"B"},
-  {age:36,vaccin:"C"},
-  {age:48,vaccin:"D"},
-  {age:60,vaccin:"E"},
+  {age:12,vaccin:"A",etat:true},
+  {age:24,vaccin:"B",etat:true},
+  {age:36,vaccin:"C",etat:false},
+  {age:48,vaccin:"D",etat:false},
+  {age:60,vaccin:"E",etat:true},
 ]
   constructor() { }
   getAllVaccins(){
@@ -18,5 +18,15 @@ vaccins:Vaccin[]=[
   }
   getVaccinByID(id:number){
     return this.vaccins[id]
+  }
+  deleteByName(name:string){
+    console.log(this.vaccins);
+    
+    this.vaccins=  this.vaccins.filter(x=>x.vaccin!=name)
+    console.log(this.vaccins);
+    
+  }
+  add(vaccin:Vaccin){
+    this.vaccins.push(vaccin)
   }
 }

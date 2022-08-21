@@ -1,9 +1,33 @@
-<div style="text-align:center">
+<div id="chart">
+  <apx-chart
+    [series]="chartOptions2.series"
+    [chart]="chartOptions2.chart"
+    [dataLabels]="chartOptions2.dataLabels"
+    [plotOptions]="chartOptions2.plotOptions"
+    [title]="chartOptions2.title"
+    [legend]="chartOptions2.legend"
+  ></apx-chart>
+</div>
+<div class="row">
+
+  <div class="col-lg-6">
     <apx-chart
       [series]="chartOptions.series"
       [chart]="chartOptions.chart"
       [xaxis]="chartOptions.xaxis"
       [title]="chartOptions.title"
     ></apx-chart>
+  </div>
+  <!--The content below is only a placeholder and can be replaced.-->
+<div class="col-lg-6" >
+  <apx-chart
+    [series]="chartOptions3.series2"
+    [chart]="chartOptions3.chart"
+    [labels]="chartOptions3.labels"
+    [fill]="chartOptions3.fill"
+    [stroke]="chartOptions3.stroke"
+    [responsive]="chartOptions3.responsive"
+  ></apx-chart>
+</div>
   </div>
   
