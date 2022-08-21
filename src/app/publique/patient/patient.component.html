@@ -1,1 +1,28 @@
-<p>patient works!</p>
+<div class="input-group mb-1">
+        <select    (click)="selectOption($event)" >
+            <option [selected]="parent.parent==patient.parent.parent" *ngFor="let parent  of parents;let i = index"  [value]="i">{{parent.parent}}</option>
+          </select>
+</div>
+<div class="input-group mb-3">
+    <span class="input-group-text">Nom Et Prenom</span>
+  <input [(ngModel)]="patient.patient" type="text" aria-label="Nom et Prenom" class="form-control">
+</div>
+<div class="input-group mb-3">
+    <span class="input-group-text">Date De Naissance</span>
+  <input [(ngModel)]="patient.dateNaissance" type="date" aria-label="Date De Naissance" class="form-control">
+</div>
+
+<div class="input-group mb-3 d-flex justify-content-center">
+    <button class="btn btn-primary" (click)="addOrUpdate()" routerLink="../">Valider</button>
+    <div *ngIf="newEl">
+    <button class="btn btn-dark"   (click)="generate()">Test</button>
+    </div>
+    <button class="btn btn-danger" routerLink="../">Annuler</button>
+      </div>
+      {{patientVaccin|json}}
+      <br>
+      <br>
+      <br>
+      <br>
+      mailing list
+      {{mailingList|json}}

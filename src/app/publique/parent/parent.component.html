@@ -1,1 +1,19 @@
-<p>parent works!</p>
+<div class="input-group mb-1">
+    <span class="input-group-text" id="basic-addon1">@</span>
+    <input [(ngModel)]="parent.email" type="email" class="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon1">
+</div>
+<div class="input-group mb-3">
+
+    <span class="input-group-text">Nom Et Prenom</span>
+  <input [(ngModel)]="parent.parent" type="text" aria-label="Nom et Prenom" class="form-control">
+</div>
+<div class="input-group mb-3">
+
+  <span class="input-group-text " >Telephone</span>
+  <input [(ngModel)]="parent.phone" type="number" aria-label="Nom et Prenom" class="form-control">
+
+  </div>
+  <div class="input-group mb-3 d-flex justify-content-center">
+<button class="btn btn-primary" (click)="add()" routerLink="../">Valider</button>
+<button class="btn btn-danger" routerLink="../">Annuler</button>
+  </div>

@@ -1,5 +1,5 @@
 import { Time } from "@angular/common";
-import { Patient } from "./patient";
+import { Patient } from "../publique/patient";
 import { Vaccin } from "./vaccin";
 
 export interface PatientVaccin {

@@ -1,1 +1,23 @@
-<p>patient-list works!</p>
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Parent</th>
+      <th scope="col">Date de Naissance</th>
+      <th scope="col"><button class="btn btn-primary" routerLink="-1" >Ajouter</button></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let patient of patients; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ patient.patient  }}</td>
+      <td>{{ patient.parent.parent  }}</td>
+      <td>{{ patient.dateNaissance |date:'short'}}</td>
+
+
+     
+      <td><button class="btn btn-warning" routerLink="{{i}}" >Modifier</button><button (click)="deleteByName(patient.patient)" class="btn btn-danger">Supprimer</button></td>
+    </tr>
+    </tbody>
+  </table>

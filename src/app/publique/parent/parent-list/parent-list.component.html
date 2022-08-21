@@ -1,1 +1,20 @@
-<p>parent-list works!</p>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Nom</th>
+    <th scope="col">Téléphone</th>
+    <th scope="col">Email</th>
+    <th scope="col"><button class="btn btn-primary" routerLink="-1" >Ajouter</button></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let parent of parents; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>{{ parent.parent  }}</td>
+    <td>{{ parent.phone | number }}</td>
+    <td>{{ parent.email  }}</td>
+    <td><button class="btn btn-warning" routerLink="{{i}}" >Modifier</button><button (click)="deleteByName(parent.parent)" class="btn btn-danger">Supprimer</button></td>
+  </tr>
+  </tbody>
+</table>

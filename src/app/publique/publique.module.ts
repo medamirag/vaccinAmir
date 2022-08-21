@@ -6,6 +6,7 @@ import { ParentComponent } from './parent/parent.component';
 import { PatientComponent } from './patient/patient.component';
 import { ParentListComponent } from './parent/parent-list/parent-list.component';
 import { PatientListComponent } from './patient/patient-list/patient-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { PatientListComponent } from './patient/patient-list/patient-list.compon
   ],
   imports: [
     CommonModule,
-    PubliqueRoutingModule
+    PubliqueRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class PubliqueModule { }
