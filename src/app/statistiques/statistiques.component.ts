@@ -140,6 +140,7 @@ export class StatistiquesComponent implements OnInit {
       fill: {
         opacity: 0.8
       },
+    
       responsive: [
         {
           breakpoint: 480,
