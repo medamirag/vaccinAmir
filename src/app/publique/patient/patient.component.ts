@@ -22,6 +22,7 @@ newEl:Boolean=true
 patient:Patient={dateNaissance:new Date,parent:{email:"",parent:"",phone:0},patient:""}
 parents:Parent[]=[]
 vaccinsAFaire:Vaccin[]=[]
+HistoriqueVaccin:PatientVaccin[]
 etablissement:Etablissement={access:"",email:"",etablissement:"",jourVaccin:5,phone:0}
 parentselect:Parent={email:"",parent:"",phone:0}
   constructor(private patientVaccinService :PatientVaccinService,private patientService:PatientService,private parentService:ParentService,private router:ActivatedRoute) { 
@@ -35,7 +36,9 @@ parentselect:Parent={email:"",parent:"",phone:0}
     this.parents=this.parentService.getAllParents()
     // this.patient.dateNaissance.setFullYear(10,10,1999)
     console.log(this.patient);
-   
+    this.HistoriqueVaccin=this.patientVaccinService.getVaccinsParPatient(this.patient)
+    console.log("this.HistoriqueVaccin",this.HistoriqueVaccin);
+    
   }
   selectOption(event:any){
     this.patient.parent=this.parentService.getParentByID(event.target.value)
@@ -70,5 +73,8 @@ else{
   
 });
 
+}
+EnvoyerSMS(){
+  alert("SMS Envoyé Au Parent")
 }
 }

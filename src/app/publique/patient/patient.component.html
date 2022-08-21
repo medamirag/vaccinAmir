@@ -1,5 +1,5 @@
 <div class="input-group mb-1">
-        <select    (click)="selectOption($event)" >
+        <select  class="form-control"  (click)="selectOption($event)" >
             <option [selected]="parent.parent==patient.parent.parent" *ngFor="let parent  of parents;let i = index"  [value]="i">{{parent.parent}}</option>
           </select>
 </div>
@@ -19,10 +19,34 @@
     </div>
     <button class="btn btn-danger" routerLink="../">Annuler</button>
       </div>
-      {{patientVaccin|json}}
-      <br>
-      <br>
-      <br>
-      <br>
-      mailing list
-      {{mailingList|json}}
+  
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Vaccin</th>
+          <th scope="col">Date Prévu</th>
+          <th scope="col">Date Vaccination</th>
+          <th scope="col">Heure Vaccination</th>
+          <th scope="col">Effectué Par</th>
+          <th scope="col">Validée</th>
+          <th scope="col"><button class="btn btn-primary" routerLink="-1" >Ajouter</button></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let histo of HistoriqueVaccin; index as i">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ histo.vaccin.vaccin  }}</td>
+          <td>{{ histo.datePrevu|date:'shortDate'}}</td>
+          <td>{{ histo.dateVaccin|date:'shortDate'}}</td>
+          <td>{{ histo.heureVaccin.hours +":"+ histo.heureVaccin.minutes}}</td>
+          <td>{{ histo.effectuePar}}</td>
+          <td><input type="checkbox" [(ngModel)]="histo.etat"></td>
+    
+    
+         
+          <td><button class="btn btn-secondary" [disabled]="histo.etat" routerLink="{{i}}" >Valider</button></td>
+          <td><button class="btn btn-warning" (click)="EnvoyerSMS()" [disabled]="!histo.etat"routerLink="{{i}}" >Rappeler</button></td>
+        </tr>
+        </tbody>
+      </table>
